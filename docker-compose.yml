@@ -1,0 +1,26 @@
+version: '2'
+services:
+  openconnect:
+    image: openconnect
+    container_name: openconnect
+    hostname: openconnect
+    command: bash -c 'start_openconnect.sh&&while true;do sleep 10;done'
+    environment:
+      TERM: linux
+      OPEN_SERVERIP: 
+      OPEN_SERVERPORT: 
+      OPEN_USERNAME: 
+      OPEN_PASSWORD: 
+      OPEN_FINGER: 
+    privileged: true
+    network_mode: host
+  squid:
+    image: squid
+    container_name: squid
+    hostname: squid
+    command: bash -c 'squid -f /etc/squid/squid.conf&&while true;do sleep 10;done'
+    environment:
+      TERM: linux
+    privileged: true
+    network_mode: host
+
