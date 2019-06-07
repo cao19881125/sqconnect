@@ -8,7 +8,7 @@ services:
     environment:
       TERM: linux
       OPEN_SERVERIP: 
-      OPEN_SERVERPORT: 
+      OPEN_SERVERPORT: 1443 
       OPEN_USERNAME: 
       OPEN_PASSWORD: 
       OPEN_FINGER: 
